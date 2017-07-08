@@ -1,0 +1,18 @@
+{
+  "require": {
+    "adrenth/thetvdb2": "2.*",
+    "smarty/smarty": "3.*",
+    "emanueleminotto/simple-html-dom": "^1.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Board2NZB\\": [
+        "api/provider/",
+        "api/classes/"
+      ]
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.2"
+  }
+}
