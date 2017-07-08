@@ -11,6 +11,9 @@ Currently only the town.ag-Board is supported, but feel free to add additional s
 2. Install dependencies using [composer](https://getcomposer.org/): `composer install`
 3. Create your custom config.php using config.sample.php
 
+## Perform the first search
+Open index.php in your browser and use the search field to receive results and test your configuration.
+
 ## How to integrate with sickrage / sickbeard
 1. Create a new custom search provider (e.g. with Site URL: http://localhost/board2nzb)
 2. Disable daily searches in the provider options
