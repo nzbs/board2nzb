@@ -37,7 +37,7 @@ $( document ).ready(function() {
     		  success: function( result ) {
     		    //console.log(result);
     		    $.each(result.channel.item, function(key,item) {
-                  $('#results').append('<div><a href="' + item.link + '&apikey=' + apikey + '">' + item.title + '</a></div>');
+                  $('#results').append('<div><a href="' + item.link + '">' + item.title + '</a></div>');
     		    });
     		    $('.modal').hide();
     		  },

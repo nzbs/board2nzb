@@ -4,7 +4,6 @@
 .idea
 
 config.php
-/api/templates_c/*
 /api/cache/*
 /log/*.log
 composer.lock

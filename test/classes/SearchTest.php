@@ -21,7 +21,7 @@ class SearchTest extends TestCase
     $apikey = APIKEY;
 
     $search = new Search();
-    $xml = $search->do($outputXML, $q, $apikey);
+    $xml = $search->doSearch($outputXML, $q, $apikey);
 
     self::assertNotEmpty($xml);
     $dom = str_get_html($xml);
@@ -85,7 +85,7 @@ class SearchTest extends TestCase
     $apikey = APIKEY;
 
     $search = new Search();
-    $json = $search->do($outputXML, $q, $apikey);
+    $json = $search->doSearch($outputXML, $q, $apikey);
     $results = json_decode($json, true);
 
     self::assertTrue(is_array($results));

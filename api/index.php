@@ -49,7 +49,7 @@ if (isset($_GET['t'])) {
         $q = $_GET['q'];
       }
 
-      echo (new Search())->do($outputXML, $q, $apikey);
+      echo (new Search())->doSearch($outputXML, $q, $apikey);
       break;
     case 'c':
     case 'caps':
@@ -77,7 +77,7 @@ if (isset($_GET['t'])) {
           Misc::showApiError(200, 'Missing parameter (ep is required for tv-search)') :
           $ep = $_GET['ep'];
 
-      echo (new SearchTV())->do($outputXML, $tvdbid, $season, $ep);
+      echo (new SearchTV())->doSearch($outputXML, $tvdbid, $season, $ep, $apikey);
       die();
       break;
     case 'm':

@@ -4,7 +4,7 @@ namespace Board2NZB;
 
 class SearchTV
 {
-  function do($outputXML, $tvdbid, $season, $ep)
+  function doSearch($outputXML, $tvdbid, $season, $ep, $apikey)
   {
     Logger::log("New tv search: " . json_encode($_GET));
     // "apikey":"1234","tvdbid":"274431","season":"2","maxage":"1200",
@@ -16,6 +16,6 @@ class SearchTV
     $seriesTitle = $tvdb->getSeriesTitle($tvdbid);
     $q = $seriesTitle . " S" . ($season < 10 ? "0" : "") . $season . "E" . ($ep < 10 ? "0" : "") . $ep;
 
-    return (new Search())->do($outputXML, $q);
+    return (new Search())->doSearch($outputXML, $q, $apikey);
   }
 }

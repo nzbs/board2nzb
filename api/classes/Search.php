@@ -13,7 +13,7 @@ class Search
    * @return string Search results
    * @return string Search results
    */
-  function do($outputXML = true, $q = '', $apikey = '')
+  function doSearch($outputXML = true, $q, $apikey)
   {
     Logger::log("New search: " . json_encode($_GET));
 

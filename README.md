@@ -1,4 +1,4 @@
-# Board2NZB: Connect your Sickrage/Sickbeard with your favorite NZB-Board.
+# Board2NZB: Connect your Sickrage/Sickbeard with your favorite NZB-Board
 
 This tool offers a (minimalistic) newznab api to connect with 
 Sickrage / Sickbeard and translates searches to search queries 
@@ -10,6 +10,7 @@ Currently only the town.ag-Board is supported, but feel free to add additional s
 1. Checkout the git repository to your webserver root: `git clone ... `
 2. Install dependencies using [composer](https://getcomposer.org/): `composer install`
 3. Create your custom config.php using config.sample.php
+4. Create & make sure the /api/templates_c/ directory is writable for the webserver
 
 ## Perform the first search
 Open index.php in your browser and use the search field to receive results and test your configuration.
@@ -26,7 +27,6 @@ to not to flood the board with search requests.
 
 ## Open issues
 * Embedding the password in the NZB leads to the following error in SABnzbd: "junk after document element auf Zeile 6". The error disappears when manually removing the header part.
-
 
 ## Credits
 - This tool is based on [nZEDb](https://github.com/nZEDb/nZEDb) However most of the code is rewritten.
