@@ -40,15 +40,6 @@ class VBulletin
     return CURL::get($link_to_startpage, $referer);
   }
 
-  public static function check_for_mustread_threads($url)
-  {
-    $curl_return = CURL::get($url, $url);
-    if (preg_match_all('/You can view the thread <a href="(.*)">here<\/a>/s', $curl_return, $searchResult)) {
-      $url = $searchResult[1][0];
-      $curl_return = CURL::get($url, $url);
-    }
-  }
-
   public static function ajaxsearch($url, $searchstring, $securitytoken, $referer, $searchin = 'allforum')
   {
     $postfields = array(

@@ -58,7 +58,7 @@ class TownProvider {
 
       // Check for must-read-threads
       $url = TOWN_BASE_URL;
-      VBulletin::check_for_mustread_threads($url);
+      $this->check_for_mustread_threads($url);
 
       self::$securitytoken = $securitytoken;
     } else {
@@ -67,6 +67,15 @@ class TownProvider {
 
     return $securitytoken;
 	}
+
+  public function check_for_mustread_threads($url)
+  {
+    $curl_return = CURL::get($url, $url);
+    if (preg_match_all('/<font color="green">Bitte klicke&nbsp>>> <\/font> <a href="([^"]*)">/s', $curl_return, $searchResult)) {
+      $url = $searchResult[1][0];
+      $curl_return = CURL::get($url, $url);
+    }
+  }
 
   public function getNZBInformation($threadURL)
   {
